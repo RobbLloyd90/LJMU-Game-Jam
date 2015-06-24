@@ -14,13 +14,14 @@ public class CharMove : MonoBehaviour {
 		{
 
 			Debug.Log ("penguin moves");
-			transform.position += Vector3.forward * (Time.deltaTime) * 20;
+			// Move the object forward along its z axis 1 unit/second.
+			transform.Translate(0, 0, 1);
 		}
 		if (Input.GetKeyDown(KeyCode.RightArrow))
 		{
 			
 			Debug.Log ("penguin rotating");
-			transform.rotation = Quaternion.AngleAxis  (30, Vector3.up);
+			transform.localRotation *= Quaternion.AngleAxis (30, Vector3.up);
 		}
 	}
 }
